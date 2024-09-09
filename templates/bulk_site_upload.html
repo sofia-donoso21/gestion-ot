@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Carga masiva de Sitios </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+        integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css"
+        integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
+        integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/adminlte.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+        integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i
+                                class="bi bi-list"></i> </a> </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <!-- <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i
+                                class="bi bi-search"></i> </a> </li> -->
+                    <!-- <li class="nav-item dropdown"> 
+                        <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i
+                                class="bi bi-chat-text"></i> <span class="navbar-badge badge text-bg-danger">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <a href="#"
+                                class="dropdown-item">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user1-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Brad Diesel
+                                            <span class="float-end fs-7 text-danger"><i
+                                                    class="bi bi-star-fill"></i></span>
+                                        </h3>
+                                        <p class="fs-7">Call me whenever you can...</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item">
+
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user8-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            John Pierce
+                                            <span class="float-end fs-7 text-secondary"> <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </h3>
+                                        <p class="fs-7">I got your message bro</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item">
+
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user3-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Nora Silvester
+                                            <span class="float-end fs-7 text-warning"> <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </h3>
+                                        <p class="fs-7">The subject goes here</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">See
+                                All Messages</a>
+                        </div>
+                    </li> -->
+
+                    <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i
+                                class="bi bi-bell-fill"></i> <span class="navbar-badge badge text-bg-warning">15</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <span
+                                class="dropdown-item dropdown-header">15 Notifications</span>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-envelope me-2"></i> 4 new messages
+                                <span class="float-end text-secondary fs-7">3 mins</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-people-fill me-2"></i> 8 friend requests
+                                <span class="float-end text-secondary fs-7">12 hours</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-file-earmark-fill me-2"></i> 3 new reports
+                                <span class="float-end text-secondary fs-7">2 days</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">
+                                See All Notifications
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i
+                                data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i
+                                data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a>
+                    </li>
+
+                    <li class="nav-item dropdown user-menu"> <a href="#" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#5f6368"
+                                class="user-image rounded-circle shadow">
+                                <path
+                                    d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z" />
+                            </svg>
+
+                            <span class="d-none d-md-inline">
+                                {{username}}
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
+                            <li class="text-bg-dark p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#5f6368"
+                                    class="user-image rounded-circle shadow">
+                                    <path
+                                        d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z" />
+                                </svg>
+                                <p>
+                                    {% for user in data %}
+                                    {{user.nombre}}
+                                    {% endfor %} - Administrador
+                                </p>
+                            </li>
+                            <li class="user-body">
+                                <div class="row">
+                                    <div class="col-4 text-center"> <a href="#">Followers</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Sales</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Friends</a> </div>
+                                </div>
+                            </li>
+                            <li class="user-footer">
+                                <!-- <a href="#" class="btn btn-default btn-flat">Profile</a>  -->
+                                <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div> <!--end::Container-->
+        </nav> <!--end::Header--> <!--begin::Sidebar-->
+
+
+
+
+        <!-- Begin Aside -->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <div class="sidebar-brand">
+                <a href="/inicio" class="brand-link">
+                    <img src="/static/img/logo.png" width="w-" alt="Red Innova Logo"
+                        class="brand-image opacity-75 shadow">
+                    <span class="brand-text fw-light">Gestion OT</span>
+                </a>
+            </div>
+
+
+            <div class="sidebar-wrapper">
+                <nav class="mt-2">
+
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
+                        data-accordion="false">
+
+                        <!-- Begin Clientes -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#fff">
+                                    <path
+                                        d="M720-40v-120H600v-80h120v-120h80v120h120v80H800v120h-80ZM80-160v-240H40v-80l40-200h600l40 200v80h-40v120h-80v-120H440v240H80Zm80-80h200v-160H160v160Zm-38-240h516-516ZM80-720v-80h600v80H80Zm42 240h516l-24-120H146l-24 120Z" />
+                                </svg>
+                                <p>
+                                    Clientes
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+
+                            <ul class="nav nav-treeview">
+                                <!-- Begin Carga Manual -->
+                                <li class="nav-item">
+                                    <a href="/cliente" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm0-80h640v-400H160v400Zm160-40h320v-80H320v80ZM200-440h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM200-560h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM160-280v-400 400Z" />
+                                        </svg>
+                                        <p>Carga Manual</p>
+                                    </a>
+                                </li>
+                                <!-- End Carga Manual -->
+
+                                <!-- Begin Carga Masiva -->
+                                <li class="nav-item">
+                                    <a href="/cliente/masivo" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z" />
+                                        </svg>
+                                        <p>Carga Masiva</p>
+                                    </a>
+                                </li>
+                                <!-- End Carga Masiva -->
+                            </ul>
+                        </li>
+                        <!-- End Clientes -->
+
+
+                        <!-- Begin Sitios -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#fff">
+                                    <path
+                                        d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
+                                </svg>
+                                <p>
+                                    Sitios
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+
+                            <ul class="nav nav-treeview">
+                                <!-- Begin Carga Manual -->
+                                <li class="nav-item">
+                                    <a href="/sitio" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm0-80h640v-400H160v400Zm160-40h320v-80H320v80ZM200-440h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM200-560h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80Zm120 0h80v-80h-80v80ZM160-280v-400 400Z" />
+                                        </svg>
+                                        <p>Carga Manual</p>
+                                    </a>
+                                </li>
+                                <!-- End Carga Manual -->
+
+                                <!-- Begin Carga Masiva -->
+                                <li class="nav-item">
+                                    <a href="/sitio/masivo" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z" />
+                                        </svg>
+                                        <p>Carga Masiva</p>
+                                    </a>
+                                </li>
+                                <!-- End Carga Masiva -->
+                            </ul>
+                        </li>
+                        <!-- End Sitios -->
+
+                        <!-- Begin Formulario -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#fff">
+                                    <path
+                                        d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+                                </svg>
+                                <p>
+                                    Formulario
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+
+                            <ul class="nav nav-treeview">
+                                <!-- Begin OT -->
+                                <li class="nav-item">
+                                    <a href="/usuario" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M240-80q-50 0-85-35t-35-85v-120h120v-560l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-560H320v440h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h240v80H360Zm0 120v-80h240v80H360Zm320-120q-17 0-28.5-11.5T640-640q0-17 11.5-28.5T680-680q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600Zm0 120q-17 0-28.5-11.5T640-520q0-17 11.5-28.5T680-560q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm-40 0v-80 80Z" />
+                                        </svg>
+                                        <p>Orden de Trabajo</p>
+                                    </a>
+                                </li>
+                                <!-- End OT -->
+
+                                <!-- Begin Soporte -->
+                                <li class="nav-item">
+                                    <a href="/soporte" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M42-120v-112q0-33 17-62t47-44q51-26 115-44t141-18q77 0 141 18t115 44q30 15 47 44t17 62v112H42Zm80-80h480v-32q0-11-5.5-20T582-266q-36-18-92.5-36T362-320q-71 0-127.5 18T142-266q-9 5-14.5 14t-5.5 20v32Zm240-240q-66 0-113-47t-47-113h-10q-9 0-14.5-5.5T172-620q0-9 5.5-14.5T192-640h10q0-45 22-81t58-57v38q0 9 5.5 14.5T302-720q9 0 14.5-5.5T322-740v-54q9-3 19-4.5t21-1.5q11 0 21 1.5t19 4.5v54q0 9 5.5 14.5T422-720q9 0 14.5-5.5T442-740v-38q36 21 58 57t22 81h10q9 0 14.5 5.5T552-620q0 9-5.5 14.5T532-600h-10q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T442-600H282q0 33 23.5 56.5T362-520Zm300 160-6-30q-6-2-11.5-4.5T634-402l-28 10-20-36 22-20v-24l-22-20 20-36 28 10q4-4 10-7t12-5l6-30h40l6 30q6 2 12 5t10 7l28-10 20 36-22 20v24l22 20-20 36-28-10q-5 5-10.5 7.5T708-390l-6 30h-40Zm20-70q12 0 21-9t9-21q0-12-9-21t-21-9q-12 0-21 9t-9 21q0 12 9 21t21 9Zm72-130-8-42q-9-3-16.5-7.5T716-620l-42 14-28-48 34-30q-2-5-2-8v-16q0-3 2-8l-34-30 28-48 42 14q6-6 13.5-10.5T746-798l8-42h56l8 42q9 3 16.5 7.5T848-780l42-14 28 48-34 30q2 5 2 8v16q0 3-2 8l34 30-28 48-42-14q-6 6-13.5 10.5T818-602l-8 42h-56Zm28-90q21 0 35.5-14.5T832-700q0-21-14.5-35.5T782-750q-21 0-35.5 14.5T732-700q0 21 14.5 35.5T782-650ZM362-200Z" />
+                                        </svg>
+
+                                        <p>Soporte</p>
+                                    </a>
+                                </li>
+                                <!-- End Soporte -->
+
+                                <!-- Begin Informe de Actividad -->
+                                <li class="nav-item">
+                                    <a href="/perfil" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm0 160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0 160q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm0-560v160-160 560-560Z" />
+                                        </svg>
+
+                                        <p>Informe de Actividad</p>
+                                    </a>
+                                </li>
+                                <!-- End Informe de Actividad -->
+                            </ul>
+
+
+                        </li>
+                        <!-- End Formulario -->
+
+
+                        <!-- Begin Configuracion -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#fff">
+                                    <path
+                                        d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                                </svg>
+                                <p>
+                                    Configuracion
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+
+                            <ul class="nav nav-treeview">
+                                <!-- Begin Usuarios -->
+                                <li class="nav-item">
+                                    <a href="/usuario" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M400-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm40-120q33 0 56.5-23.5T760-320q0-33-23.5-56.5T680-400q-33 0-56.5 23.5T600-320q0 33 23.5 56.5T680-240ZM400-560q33 0 56.5-23.5T480-640q0-33-23.5-56.5T400-720q-33 0-56.5 23.5T320-640q0 33 23.5 56.5T400-560Zm0-80Zm12 400Z" />
+                                        </svg>
+                                        <p>Usuarios</p>
+                                    </a>
+                                </li>
+                                <!-- End Usuarios -->
+
+                                <!-- Begin Perfiles -->
+                                <li class="nav-item">
+                                    <a href="/perfil" class="nav-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#5f6368">
+                                            <path
+                                                d="M680-280q25 0 42.5-17.5T740-340q0-25-17.5-42.5T680-400q-25 0-42.5 17.5T620-340q0 25 17.5 42.5T680-280Zm0 120q31 0 57-14.5t42-38.5q-22-13-47-20t-52-7q-27 0-52 7t-47 20q16 24 42 38.5t57 14.5ZM480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v227q-19-8-39-14.5t-41-9.5v-147l-240-90-240 90v188q0 47 12.5 94t35 89.5Q310-290 342-254t71 60q11 32 29 61t41 52q-1 0-1.5.5t-1.5.5Zm200 0q-83 0-141.5-58.5T480-280q0-83 58.5-141.5T680-480q83 0 141.5 58.5T880-280q0 83-58.5 141.5T680-80ZM480-494Z" />
+                                        </svg>
+
+                                        <p>Perfiles</p>
+                                    </a>
+                                </li>
+                                <!-- End Perfiles -->
+                            </ul>
+
+
+                        </li>
+                        <!-- End Configuracion -->
+
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- End Aside -->
+
+        <!-- Main -->
+        <main class="app-main">
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4 class="info-box-number">¡Hola! <strong>{{name}}</strong>
+                            </h4>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-end">
+                                <li class="breadcrumb-item"><a href="/inicio">Configuracion</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Sitios
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Carga Masiva
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="app-content">
+                <div class="container-fluid">
+                    <form class="row" method="POST" action="/sitio/masivo" onsubmit="return loadSite()" enctype="multipart/form-data">
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="info-box"> <span class="info-box-icon text-bg-primary shadow-sm">
+                                    <svg class="svg-icon p-2" viewBox="0 0 1024 1024" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                        <path
+                                            d="M784.814967 293.780976c-37.510312 0-74.940806 0-112.450095 0 0 18.71627 0 37.509289 0 56.224536 37.508265 0 74.93876 0 112.450095 0C784.814967 331.291289 784.814967 312.497247 784.814967 293.780976zM865.215112 687.757956c-0.077771-139.354861-0.243547-278.717909 0.157589-418.151565-0.555655-13.656021 0.409322-28.755927-7.868201-40.647769-11.803837-8.109702-26.748201-7.144724-40.322357-7.710612-80.401168 0.401136-160.801313 0.243547-241.200434 0.243547 0-21.444405 0-42.812061 0-64.258513l-47.715745 0c-123.212206 21.767769-246.505253 42.890856-369.801371 64.337307 0 187.390901 0 374.781802 0 562.172703 122.568547 21.444405 245.224074 42.011836 367.637078 64.257489l49.880037 0c0-24.096814 0-48.192605 0-72.290443 83.292008-0.157589 166.5789 0.243547 249.796206 0 13.412474-0.564865 33.492812-0.963954 36.709063-17.673521C867.379405 734.986607 864.817046 711.13334 865.215112 687.757956zM395.011031 628.325355c-13.657045-33.494858-30.277584-65.866127-40.082904-100.889805-10.916631 32.615838-26.503631 63.379493-39.029922 95.343485-17.59575-0.243547-35.18843-0.964978-52.773947-1.686409 20.646226-40.403199 40.560788-81.121576 61.847603-121.282251-18.071587-41.370223-37.916565-81.929987-56.547901-123.056664 17.673521-1.043772 35.337833-2.086521 53.010331-3.050476 11.971659 31.406291 25.062815 62.405305 34.94386 94.621031 10.598382-34.135448 26.425859-66.265216 39.996946-99.281167 18.151405-1.285273 36.387745-2.408863 54.616922-3.295046-21.445428 43.935652-42.968627 87.87642-64.814168 131.645273 22.089088 44.98454 44.656059 89.639576 66.822918 134.62514C433.642886 630.889761 414.369937 629.688399 395.011031 628.325355zM841.040527 751.615333c-88.354304 0-176.710654 0-265.059841 0 0-16.063861 0-32.128745 0-48.193629 21.443381 0 42.811038 0 64.256466 0 0-18.715247 0-37.509289 0-56.224536-21.445428 0-42.813085 0-64.256466 0 0-10.683317 0-21.444405 0-32.127721 21.443381 0 42.811038 0 64.256466 0 0-18.715247 0-37.510312 0-56.224536-21.445428 0-42.813085 0-64.256466 0 0-10.682293 0-21.446451 0-32.128745 21.443381 0 42.811038 0 64.256466 0 0-18.715247 0-37.509289 0-56.224536-21.445428 0-42.813085 0-64.256466 0 0-10.683317 0-21.445428 0-32.127721 21.443381 0 42.811038 0 64.256466 0 0-18.71627 0-37.509289 0-56.224536-21.445428 0-42.813085 0-64.256466 0 0-10.683317 0-21.446451 0-32.129768 21.443381 0 42.811038 0 64.256466 0 0-18.715247 0-37.508265 0-56.224536-21.445428 0-42.813085 0-64.256466 0 0-16.063861 0-32.127721 0-48.192605 88.350211 0 176.706561 0 265.059841 0C841.040527 414.264025 841.040527 582.939679 841.040527 751.615333zM784.814967 382.136304c-37.510312 0-74.940806 0-112.450095 0 0 18.715247 0 37.508265 0 56.224536 37.508265 0 74.93876 0 112.450095 0C784.814967 419.645592 784.814967 400.851551 784.814967 382.136304zM784.814967 470.489584c-37.510312 0-74.940806 0-112.450095 0 0 18.715247 0 37.509289 0 56.224536 37.508265 0 74.93876 0 112.450095 0C784.814967 507.998873 784.814967 489.204831 784.814967 470.489584zM784.814967 558.843888c-37.510312 0-74.940806 0-112.450095 0 0 18.714224 0 37.509289 0 56.224536 37.508265 0 74.93876 0 112.450095 0C784.814967 596.353177 784.814967 577.558112 784.814967 558.843888zM784.814967 647.197168c-37.510312 0-74.940806 0-112.450095 0 0 18.715247 0 37.509289 0 56.224536 37.508265 0 74.93876 0 112.450095 0C784.814967 684.706457 784.814967 665.912415 784.814967 647.197168z" />
+                                    </svg>
+                                </span>
+
+                                <div class="info-box-content">
+                                    <h3 class="info-box-text">Formato</h3>
+                                    <div class="input-group mb-3">
+                                        <select id="formato" name="formato" class="form-select">
+                                            <option value="0" disabled selected>Selecciona un formato</option>
+                                            <option value="xlsx">Excel</option>
+                                            <option value="csv">CSV</option>
+                                            <option value="txt">Texto de archivo plano</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mostrar cuando se seleccione una opcion de id="formato" -->
+                        <div id="formato-seleccionado" class="col-12 col-sm-6 col-md-4 hidden">
+                            <div class="info-box"> <span class="info-box-icon text-bg-success shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#fff"
+                                        class="p-2">
+                                        <path
+                                            d="M800-240v-480h80v480h-80Zm-320 0-57-56 144-144H80v-80h487L424-664l56-56 240 240-240 240Z" />
+                                    </svg>
+                                </span>
+                                <div class="info-box-content">
+                                    <h3 class="info-box-text">Separador de columnas</h3>
+                                    <div class="input-group mb-3">
+                                        <select id="separador" name="separador" class="form-select">
+                                            <option value="0" disabled selected>Selecciona un separador</option>
+                                            <option value=",">,</option>
+                                            <option value=";">;</option>
+                                            <option value=".">.</option>
+                                            <option value="|">|</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="archivo" class="col-12 col-sm-6 col-md-4 hidden">
+                            <div class="info-box"> <span class="info-box-icon text-bg-danger shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                                fill="#fff" class="p-2">
+                                <path
+                                    d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z" />
+                            </svg></span>
+                                    <div class="info-box-content">
+                                        <h3 class="info-box-text">Archivo</h3>
+                                        <div class="input-group mb-3">
+                                            <input type="file" class="form-control" id="file" name="file">
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div id="btn" class="col-12  hidden">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Cargar Clientes</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+    </div>
+    </main>
+    <!-- Main -->
+    <footer class="app-footer">
+        <div class="float-end d-none d-sm-inline">Todo lo que necesitas</div>
+        <strong>
+            Copyright &copy; 2024&nbsp;
+            <a href="https://www.redinnova.cl/" target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none">RedInnova</a>.
+        </strong>
+        Todos los derechos reservados.
+    </footer>
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js"
+        integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script>
+    <script src="/static/js/adminlte.js"></script>
+    <script src="/static/js/charts.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
+        integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script>
+    <script src="/static/js/bulk_site.js"></script>
+</body>
+
+</html>
