@@ -39,8 +39,8 @@ class ConfigAzure:
     @staticmethod
     def get_blob_service_client():
         # Configura la conexión con Azure Blob Storage
-        connect_str = "DefaultEndpointsProtocol=https;AccountName=storageredinnovastudent;AccountKey=oERtcs4MZVlvRp2BWOfiwOJ25kMlT/Tv81QTCfVs4YItvKUy+JGk2FU7ogEmj4MVq8IZg/wznG1f+AStoX16YQ==;EndpointSuffix=core.windows.net"
-        return BlobServiceClient.from_connection_string(connect_str)
+        connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING') 
+        return BlobServiceClient.from_connection_string(connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING'))
 
     @staticmethod
     def get_container_name():
@@ -48,9 +48,9 @@ class ConfigAzure:
     
     @staticmethod
     def generate_sas_url(container_name, blob_name):
-        connect_str = "DefaultEndpointsProtocol=https;AccountName=storageredinnovastudent;AccountKey=oERtcs4MZVlvRp2BWOfiwOJ25kMlT/Tv81QTCfVs4YItvKUy+JGk2FU7ogEmj4MVq8IZg/wznG1f+AStoX16YQ==;EndpointSuffix=core.windows.net"
+        connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
         # Crear el BlobServiceClient
-        blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+        blob_service_client = BlobServiceClient.from_connection_string(connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING'))
         # Generar SAS token
         sas_token = generate_blob_sas(
             account_name=blob_service_client.account_name,
